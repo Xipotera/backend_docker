@@ -6,7 +6,7 @@ const router = Router()
 
 router.get('/', (req, res) => {
     const logString = new Date().toLocaleString() + ": Connection received in root\n"
-    fs.appendFileSync('logs.txt', logString);
+    fs.appendFileSync('./logs/logs.txt', logString);
     res.send('Port configured correctly, generated message in logs.txt')
 })
 

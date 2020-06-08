@@ -5,7 +5,7 @@ export const createMessage = async (req, res) => {
     try {
         const message = req.body.message || "Empty message"
         const logString = new Date().toLocaleString() + ": " + message + "\n"
-        fs.appendFileSync('logs.txt', logString);
+        fs.appendFileSync('./logs/logs.txt', logString);
 
         if (!Message) return res.status(503).send('No database connection')
         Message.create({
